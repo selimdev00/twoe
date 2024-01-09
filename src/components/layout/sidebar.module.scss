@@ -1,0 +1,52 @@
+.layoutSidebar {
+  padding: 1.4em 2.28em;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  &__nav {
+    margin-top: 3.9em;
+    color: var(--main-gray);
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.09em;
+
+      &__item {
+        display: flex;
+        align-items: center;
+        gap: 0.6em;
+        transition: color var(--main-transition-time) ease;
+
+        span {
+          opacity: 0;
+          transition: opacity var(--main-transition-time) ease;
+        }
+
+        &:hover {
+          color: var(--main-white);
+
+          span {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &__up {
+    color: var(--main-gray);
+    transition: color var(--main-transition-time) ease;
+    cursor: pointer;
+    display: inline-block;
+
+    &:hover {
+      color: var(--main-white);
+    }
+  }
+}
