@@ -53,7 +53,7 @@ const nav = [
 export default function LayoutSidebar() {
   return (
     <div className={styles.layoutSidebar}>
-      <div className={styles.layoutSidebar__block}>
+      <div>
         <LogoIcon />
 
         <nav className={styles.layoutSidebar__nav}>
@@ -72,9 +72,7 @@ export default function LayoutSidebar() {
         </nav>
       </div>
 
-      <div
-        className={`${styles.layoutSidebar__block} ${styles.layoutSidebar__up}`}
-      >
+      <div className={styles.layoutSidebar__up}>
         <ArrowUpIcon />
       </div>
     </div>

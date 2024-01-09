@@ -1,12 +1,13 @@
 .layoutSidebar {
   padding: 1.4em 2.28em;
-  position: fixed;
+  position: sticky;
   top: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  width: var(--sidebar-width);
 
   &__nav {
     margin-top: 3.9em;
@@ -22,6 +23,7 @@
         align-items: center;
         gap: 0.6em;
         transition: color var(--main-transition-time) ease;
+        white-space: nowrap;
 
         span {
           opacity: 0;
