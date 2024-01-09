@@ -12,7 +12,7 @@ export default function RootLayout({
       <body>
         <div className={styles.mainWrapper}>
           <LayoutSidebar />
-          <main style={{ minHeight: "200vh" }}>{children}</main>
+          <main className={styles.mainWrapper__content}>{children}</main>
         </div>
       </body>
     </html>

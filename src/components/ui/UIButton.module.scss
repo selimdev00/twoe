@@ -1,0 +1,23 @@
+.button {
+  padding: 0.75em 1.14em;
+  border: none;
+  color: var(--main-white);
+  cursor: pointer;
+  transition: background var(--main-transition-time) ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  font-weight: 500;
+  font-size: 1.07em;
+  gap: 8px;
+
+  &--primary {
+    background: var(--gradient-accent);
+  }
+
+  &--secondary {
+    background: var(--gradient-white-50);
+    backdrop-filter: blur(10px);
+  }
+}
