@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./sidebar.module.scss";
 
 import {
@@ -11,6 +13,8 @@ import {
   AccountIcon,
 } from "@/components/icons";
 import Link from "next/link";
+
+import { useEffect } from "react";
 
 const nav = [
   {
@@ -51,6 +55,34 @@ const nav = [
   },
 ];
 export default function LayoutSidebar() {
+  useEffect(() => {
+    const up = document.querySelector(`.${styles.layoutSidebar__up}`);
+
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 0) {
+        up?.classList.add(styles.active);
+      } else {
+        up?.classList.remove(styles.active);
+      }
+    });
+
+    up?.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+
+    return () => {
+      up?.removeEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    };
+  }, []);
+
   return (
     <div className={styles.layoutSidebar}>
       <div>

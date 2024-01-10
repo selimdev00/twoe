@@ -8,6 +8,7 @@
   justify-content: space-between;
   align-items: flex-start;
   width: var(--sidebar-width);
+  z-index: 99;
 
   &__nav {
     margin-top: 3.9em;
@@ -43,9 +44,16 @@
 
   &__up {
     color: var(--main-gray);
-    transition: color var(--main-transition-time) ease;
+    transition: all var(--main-transition-time) ease;
     cursor: pointer;
     display: inline-block;
+    opacity: 0;
+    pointer-events: none;
+
+    &.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
 
     &:hover {
       color: var(--main-white);
