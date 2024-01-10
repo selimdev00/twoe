@@ -1,9 +1,53 @@
 @mixin gradientImageOverlay($url) {
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0) 79.93%, #09090c 100%),
-    linear-gradient(90deg, #09090c 0%, rgba(0, 0, 0, 0) 51.76%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 89.93%, #09090c 100%),
+    linear-gradient(90deg, #09090c 30%, rgba(0, 0, 0, 0) 51.76%),
     url($url),
     lightgray 50%;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+@mixin highlightBorderText($borderSize) {
+  color: var(--main-black);
+  background: var(--gradient-accent);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: $borderSize transparent;
+  text-stroke: $borderSize transparent;
+}
+
+@mixin highlightBorderOnHover($border) {
+  &:before {
+    opacity: 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -$border;
+    border-radius: inherit;
+    background: var(--gradient-accent);
+    transition: all var(--main-transition-time) ease;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: var(--main-black);
+  }
+
+  &:hover {
+    &:before {
+      opacity: 1;
+    }
+  }
 }
