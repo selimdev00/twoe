@@ -1,0 +1,27 @@
+.topRating {
+  margin-top: 3.9em;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+
+    &__highlight {
+      text-transform: uppercase;
+      color: var(--main-black);
+      background: var(--gradient-accent);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-stroke: 2px transparent;
+      text-stroke: 2px transparent;
+      font-size: 2em;
+      font-style: italic;
+      font-weight: 900;
+    }
+
+    &__text {
+      font-size: 1.3em;
+      font-weight: 700;
+    }
+  }
+}

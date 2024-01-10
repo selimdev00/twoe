@@ -6,6 +6,7 @@ import { CatalogSlider } from "@/components/catalog/CatalogSlider";
 
 import styles from "./page.module.scss";
 import { CatalogSliderItemType } from "@/types/catalog";
+import TopRating from "@/components/topRating/TopRating";
 
 export const metadata: Metadata = {
   title: "Главная страница | Фильмы и сериалы на любой вкус",
@@ -82,6 +83,8 @@ export default function Home() {
       </div>
 
       <CatalogSlider items={catalogItems} title={"Новинки"} />
+
+      <TopRating />
     </div>
   );
 }
