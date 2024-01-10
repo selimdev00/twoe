@@ -7,13 +7,12 @@
   &__banner {
     @include gradientImageOverlay("/images/1/bg.png");
     width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 5.9em;
+    padding: 10.6em var(--sidebar-width) 0 0;
     padding-right: var(--sidebar-width);
 
     &__block {

@@ -37,6 +37,12 @@ const catalogItems: CatalogSliderItemType[] = [
     poster: "/images/5/poster.jpeg",
     rating: "7,0",
   },
+  {
+    id: 5,
+    title: "Blue жук",
+    poster: "/images/2/poster.png",
+    rating: "9",
+  },
 ];
 
 export default function Home() {

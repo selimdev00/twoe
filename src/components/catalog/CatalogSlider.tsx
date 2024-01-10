@@ -4,10 +4,10 @@ import { CatalogSliderItem } from "@/components/catalog/CatalogSliderItem";
 
 import { CatalogSliderItemType } from "@/types/catalog";
 
-import { Virtual } from "swiper/modules";
+import styles from "./catalogSlider.module.scss";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/virtual";
 export const CatalogSlider = ({
   items,
   title,
@@ -16,17 +16,19 @@ export const CatalogSlider = ({
   title?: string;
 }) => {
   return (
-    <div>
-      {title && <h2>{title}</h2>}
+    <div className={styles.slider}>
+      {title && <h2 className={styles.slider__title}>{title}</h2>}
 
-      <Swiper modules={[Virtual]} slidesPerView={4} virtual>
-        {items
-          ? items.map((item, index) => (
-              <SwiperSlide key={item.id} virtualIndex={index}>
-                <CatalogSliderItem {...item} />
-              </SwiperSlide>
-            ))
-          : "No items"}
+      <Swiper
+        slidesPerView={3.9}
+        spaceBetween={50}
+        className={styles.slider__swiper}
+      >
+        {items.map((item, index) => (
+          <SwiperSlide key={item.id}>
+            <CatalogSliderItem {...item} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
